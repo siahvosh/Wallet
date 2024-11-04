@@ -17,7 +17,7 @@ export const Login = () => {
         <React.Fragment>
            <Card style={{ width: '40%', scale: '1.8'}}>
                     <Grid2 container spacing={2}>
-                        <Grid2 size={5} style={{padding: '1rem'}}>
+                        <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem'}}>
                             <Divider style={{fontSize: '.6rem'}}>Login</Divider>
                             <Grid2 style={{marginTop: '1rem'}} container spacing={2}>
                                 <Grid2 size={12}>
@@ -69,7 +69,7 @@ export const Login = () => {
                                 </Grid2>
                             </Grid2>
                         </Grid2>
-                        <Grid2 size={7} style={{background: '#1E201E', padding: '10px'}} >
+                        <Grid2 sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}  size={{ xs: 12, sm: 12, md: 7 }} style={{background: '#1E201E', padding: '10px'}} >
                             <div style={{ position: "relative", top: '50%', left: '50%', transform:  'translate(-50%, -50%)'}}>
                                 <Grid2 size={12}>
                                   <span style={{color: 'white', fontSize: '.8rem', textTransform: 'capitalize', fontWeight: '700'}}>
