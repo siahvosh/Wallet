@@ -4,10 +4,12 @@ import {Button, Card, Divider, Grid2, IconButton} from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
+import {useNavigate} from 'react-router-dom'
 import  './../../App.css'
 
 
 export const Login = () => {
+   let navigate = useNavigate()
     return (
         <React.Fragment>
                 <Card style={{ width: '80%', }}>
@@ -42,6 +44,7 @@ export const Login = () => {
                                         style={{display: 'block',   width: '100%'}}
                                         size="small"
                                         variant="contained"
+                                        onClick={() => navigate('/home')}
 
                                     >
                                         sing in
@@ -49,16 +52,16 @@ export const Login = () => {
                                 </Grid2>
                                 <Grid2 size={12} spacing={2}>
                                     <Divider style={{fontSize: '.5rem'}}>Or</Divider>
-                                    <div  style={{display: 'flex', justifyContent: "space-around", marginTop: '0.3rem'}}>
+                                    <div style={{display: 'flex', justifyContent: "space-around", marginTop: '0.3rem'}}>
                                         <IconButton className='hover-icon' aria-label="git" style={{color: '#1E201E', width: '20px', height: '20px'}} size='small'>
-                                        <GitHubIcon fontSize='x-small' />
-                                    </IconButton>
+                                           <GitHubIcon fontSize='x-small' />
+                                        </IconButton>
                                         <IconButton className='hover-icon' aria-label="google" style={{color: '#1E201E', width: '20px', height: '20px'}} size='small'>
-                                        <GoogleIcon fontSize='x-small'/>
-                                    </IconButton>
+                                            <GoogleIcon fontSize='x-small'/>
+                                        </IconButton>
                                         <IconButton className='hover-icon' aria-label="apple" style={{ color: '#1E201E', width: '20px', height: '20px'}} size='small'>
-                                        <AppleIcon fontSize='x-small'/>
-                                    </IconButton>
+                                            <AppleIcon fontSize='x-small'/>
+                                        </IconButton>
                                     </div>
                                 </Grid2>
                             </Grid2>
@@ -75,6 +78,7 @@ export const Login = () => {
                                         className='btn'
                                         style={{fontSize: '.5rem', border: '1px solid white'}}
                                         variant="outlined"
+                                        onClick={() => navigate('/register')}
                                     >
                                         Create account
                                     </Button>
