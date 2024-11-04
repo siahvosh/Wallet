@@ -5,14 +5,17 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
 import {useNavigate} from 'react-router-dom'
+import {useEffect, useState} from "react";
 import  './../../App.css'
 
 
 export const Login = () => {
+
+
     let navigate = useNavigate()
     return (
         <React.Fragment>
-           <Card style={{ width: '70%', }}>
+           <Card style={{ width: '40%', scale: '1.8'}}>
                     <Grid2 container spacing={2}>
                         <Grid2 size={5} style={{padding: '1rem'}}>
                             <Divider style={{fontSize: '.6rem'}}>Login</Divider>

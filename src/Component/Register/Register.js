@@ -1,19 +1,22 @@
 import React from 'react'
-import {Button, Card, Checkbox, Divider, FormControlLabel, Grid2, IconButton} from "@mui/material";
+import {Box, Button, Card, Checkbox, Divider, FormControlLabel, Grid2, Icon, IconButton} from "@mui/material";
 import TextField from "@mui/material/TextField";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import {useNavigate} from 'react-router-dom'
+import {Visibility, VisibilityOff} from "@mui/icons-material";
+import {useEffect, useState} from "react";
 
 
 export const Register = () => {
     let navigate = useNavigate()
+
     return (
         <React.Fragment>
-            <Card style={{ width: '70%', }}>
+            <Card style={{ width: '40%', scale: '1.8'}}>
                 <Grid2 container spacing={2}>
-                    <Grid2 size={7} style={{background: '#1E201E', padding: '10px'}} >
+                    <Grid2 sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}  size={{ xs: 12, sm: 12, md: 7 }} style={{background: '#1E201E', padding: '10px'}} >
                         <div style={{ position: "relative", top: '50%', left: '50%', transform:  'translate(-50%, -50%)'}}>
                             <Grid2 size={12}>
                                   <span style={{color: 'white', fontSize: '.8rem', textTransform: 'capitalize', fontWeight: '700'}}>
@@ -38,11 +41,13 @@ export const Register = () => {
                             </Grid2>
                         </div>
                     </Grid2>
-                    <Grid2 size={5} style={{padding: '1rem'}}>
+                    <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem'}}>
                         <Divider style={{fontSize: '.6rem'}}>Register</Divider>
                         <Grid2 style={{marginTop: '1rem'}} container spacing={2}>
-                            <Grid2 size={6}>
+                            {/*First name========================================*/}
+                            <Grid2 size={{xs: 12, sm: 12, md: 6}}>
                                 <TextField
+
                                     size="small"
                                     style={{width: '100%'}}
                                     id="outlined-basic"
@@ -51,7 +56,8 @@ export const Register = () => {
                                     variant="outlined"
                                 />
                             </Grid2>
-                            <Grid2 size={6}>
+                            {/*Last name=======================================*/}
+                            <Grid2 size={{xs: 12, sm: 12, md: 6}}>
                                 <TextField
                                     size="small"
                                     style={{width: '100%'}}
@@ -61,6 +67,7 @@ export const Register = () => {
                                     variant="outlined"
                                 />
                             </Grid2>
+                            {/*Email=======================================*/}
                             <Grid2 size={12}>
                                 <TextField
                                     size="small"
@@ -71,6 +78,7 @@ export const Register = () => {
                                     variant="outlined"
                                 />
                             </Grid2>
+                            {/*Password=======================================*/}
                             <Grid2 size={12}>
                                 <TextField
                                     size="small"
@@ -81,6 +89,7 @@ export const Register = () => {
                                     variant="outlined"
                                 />
                             </Grid2>
+                            {/*button=======================================*/}
                             <Grid2 size={12}>
                                 <Button
                                     className='btn'
@@ -102,7 +111,6 @@ export const Register = () => {
                             </Grid2>
                         </Grid2>
                     </Grid2>
-
                 </Grid2>
             </Card>
         </React.Fragment>
