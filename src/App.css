@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+.btn{
+  background-color: #1E201E !important;
+  color: #ECDFCC !important;
+}
+
+
+.btn:hover{
+  color: #697565 !important;
+}
+
+.hover-icon:hover{
+  background: #697565 !important; ;
+  color: #ECDFCC !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
