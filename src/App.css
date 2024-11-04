@@ -12,6 +12,10 @@
   color: #697565 !important;
 }
 
+.custom-line-height {
+  line-height: 1.2;
+}
+
 .hover-icon:hover{
   background: #697565 !important; ;
   color: #ECDFCC !important;
