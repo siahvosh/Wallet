@@ -23,11 +23,9 @@ export const Register = () => {
                                   </span>
                             </Grid2>
                             <Grid2 size={12}>
-
                                   <span style={{color: 'white', fontSize: '.4rem'}}>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci autem blanditiis cum dolorum est eum, expedita facilis inventore magni natus nihil odit placeat quisquam quod quos sequi tempore vel? Sequi!
                                   </span>
-
                             </Grid2>
                             <Grid2 size={12}>
                                 <Button
