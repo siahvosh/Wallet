@@ -8,7 +8,6 @@ import {useNavigate} from 'react-router-dom'
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import {useEffect, useState} from "react";
 
-
 export const Register = () => {
     let navigate = useNavigate()
 
