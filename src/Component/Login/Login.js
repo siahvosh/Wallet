@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
-import {Button, Card, Divider, Grid2, IconButton} from "@mui/material";
+import {Alert, AlertTitle, Box, Button, Card, Collapse, Divider, Grid2, IconButton} from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
@@ -15,14 +15,33 @@ export const Login = () => {
     let navigate = useNavigate()
 
     const { t } = useTranslation('login');
+    const [open, setOpen] = useState(false)
     const [emailVal, setEmailVal] = useState('')
     const [passVal, setPassVal] = useState('')
+    const [emailError, setEmailError] = useState('');
 
     const login = () => {
         navigate('/home')
+        setOpen(true)
         console.log({emailVal: emailVal})
         console.log({passVal: passVal})
     }
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+    const handleEmailChange = (e) => {
+        const value = e;
+        setEmailVal(value);
+
+        if (!validateEmail(value)) {
+            setEmailError('ایمیل وارد شده نامعتبر است');
+        } else {
+            setEmailError('');
+        }
+    };
+
+
 
     return (
         <React.Fragment>
@@ -41,7 +60,9 @@ export const Login = () => {
                                    id="outlined-basic"
                                    type={"email"}
                                    value={emailVal}
-                                   onChange={(e) => setEmailVal(e.target.value)}
+                                   error={!!emailError}
+                                   helperText={emailError}
+                                   onChange={(e) => handleEmailChange(e.target.value)}
                                    label={t('login.form.email')}
                                    variant={"outlined"}
                                />
@@ -55,7 +76,7 @@ export const Login = () => {
                                    label={t('login.form.password')}
                                    variant="outlined"
                                    value={passVal}
-                                   onChange={(e) => setPassVal(e.target.value)}
+                                   onChange={(e) => setPassVal(e.target.value) }
                                />
                            </Grid2>
                            <Grid2 size={12}>
@@ -130,6 +151,7 @@ export const Login = () => {
                    </Grid2>
                </Grid2>
            </Card>
+
         </React.Fragment>
     )
 }

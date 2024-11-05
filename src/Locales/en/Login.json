@@ -15,6 +15,10 @@
     "btn": {
       "en": "English",
       "fa": "Persian"
+    },
+    "alert": {
+      "invalidMail": "The entered email is invalid.",
+      "incorrectMail": "The email or password is incorrect."
     }
   }
 }
