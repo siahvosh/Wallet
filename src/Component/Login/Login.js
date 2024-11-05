@@ -12,15 +12,31 @@ import {useTranslation} from "react-i18next";
 import changeLanguage from "../../helper"
 
 export const Login = () => {
-    const { t } = useTranslation('login');
     let navigate = useNavigate()
+
+    const { t } = useTranslation('login');
+    const [emailVal, setEmailVal] = useState('')
+    const [passVal, setPassVal] = useState('')
+
+    const validateValue = () => {
+        if(emailVal)
+            return 'false'
+        else
+            return 'false'
+    }
+
+    const login = () => {
+        navigate('/home')
+        console.log({emailVal: emailVal})
+        console.log({passVal: passVal})
+    }
 
     return (
         <React.Fragment>
            <Card style={{ width: '50%', scale: '1.8', background: '#1E201E'}}>
                <Grid2 container>
                    <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem', background: '#ffffff'}}>
-                       <Divider >
+                       <Divider>
                            <span style={{fontSize: '1.2rem', fontWeight: '500'}}>{t('login.form.title')}</span>
                        </Divider>
                        <Grid2 style={{marginTop: '1rem'}} container spacing={1}>
@@ -31,6 +47,8 @@ export const Login = () => {
                                    style={{  width: '100%'}}
                                    id="outlined-basic"
                                    type={"email"}
+                                   value={emailVal}
+                                   onChange={(e) => setEmailVal(e.target.value)}
                                    label={t('login.form.email')}
                                    variant={"outlined"}
                                />
@@ -43,6 +61,8 @@ export const Login = () => {
                                    type={"password"}
                                    label={t('login.form.password')}
                                    variant="outlined"
+                                   value={passVal}
+                                   onChange={(e) => setPassVal(e.target.value)}
                                />
                            </Grid2>
                            <Grid2 size={12}>
@@ -50,8 +70,8 @@ export const Login = () => {
                                    style={{display: 'block',   width: '100%'}}
                                    size="small"
                                    variant="contained"
-                                   onClick={() => navigate('/home')}
-
+                                   onClick={login}
+                                   disabled={!emailVal || !passVal}
                                >
                                    {t('login.form.loginBtn')}
                                </Button>
