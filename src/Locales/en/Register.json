@@ -1,15 +1,22 @@
 {
   "register": {
     "form": {
-      "title": "ورود",
-      "email": "ایمیل",
-      "password": "رمز عبور",
-      "loginBtn": "ورود",
-      "or": "یا"
+      "title": "Register",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "registerBtn": "Register"
     },
     "description": {
       "title": "Mirzad",
-      "welcome": "به برنامه خوش آمدید!"
+      "welcome": "Mirzad Digital Wallet is a secure and user-friendly tool for managing and storing your cryptocurrencies, providing fast and easy transactions with high security."
+    },
+    "btn": {
+      "rulesCheckBox": "I Agree to Mirzad Privacy Policy.",
+      "en": "English",
+      "fa": "Persian",
+      "haveAnAccount": "I already have an account."
     }
   }
 }
