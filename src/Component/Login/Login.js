@@ -18,19 +18,21 @@ export const Login = () => {
     return (
         <React.Fragment>
            <Card style={{ width: '40%', scale: '1.8'}}>
-               <Grid2 container spacing={2}>
+               <Grid2 container>
                    <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem'}}>
-                       <Divider style={{fontSize: '.6rem'}}> {t('login.form.title')} </Divider>
-                       <Grid2 style={{marginTop: '1rem'}} container spacing={2}>
+                       <Divider>
+                           <span style={{fontSize: '1.2rem', fontWeight: '600'}}>{t('login.form.title')}</span>
+                       </Divider>
+                       <Grid2 style={{marginTop: '1rem'}} container spacing={1}>
                            <Grid2 size={12}>
                                <TextField
-                                   shrink
+                                   className="TextField"
                                    size="small"
                                    style={{  width: '100%'}}
                                    id="outlined-basic"
                                    type={"email"}
                                    label={t('login.form.email')}
-                                   variant="outlined"
+                                   variant={"outlined"}
                                />
                            </Grid2>
                            <Grid2 size={12}>
@@ -45,7 +47,6 @@ export const Login = () => {
                            </Grid2>
                            <Grid2 size={12}>
                                <Button
-                                   className='btn'
                                    style={{display: 'block',   width: '100%'}}
                                    size="small"
                                    variant="contained"
@@ -55,17 +56,17 @@ export const Login = () => {
                                    {t('login.form.loginBtn')}
                                </Button>
                            </Grid2>
-                           <Grid2 size={12} spacing={2}>
+                           <Grid2 size={12}>
                                <Divider style={{fontSize: '.5rem'}}>{t('login.form.or')}</Divider>
                                <div style={{display: 'flex', justifyContent: "space-around", marginTop: '0.6rem'}}>
-                                   <IconButton className='hover-icon' aria-label="git" style={{color: '#1E201E', width: '20px', height: '20px'}} size='small'>
+                                   <IconButton className='hover-icon btn' aria-label="git" style={{color: '#1E201E', width: '20px', height: '20px'}} size='small'>
                                       <GitHubIcon fontSize='x-small'/>
                                    </IconButton>
-                                   <IconButton className='hover-icon' aria-label="google" style={{color: '#1E201E', width: '20px', height: '20px'}} size='small'>
+                                   <IconButton className='hover-icon btn' aria-label="google" style={{color: '#1E201E', width: '20px', height: '20px'}} size='small'>
                                        <GoogleIcon fontSize='x-small'/>
                                    </IconButton>
                                    <IconButton className='hover-icon' aria-label="apple" style={{ color: '#1E201E', width: '20px', height: '20px'}} size='small'>
-                                       <AppleIcon fontSize='x-small'/>
+                                       <AppleIcon fontSize='x-small btn'/>
                                    </IconButton>
                                </div>
                            </Grid2>
@@ -79,7 +80,7 @@ export const Login = () => {
                        <Button
                            size='small'
                            variant='outlined'
-                           className='btn'
+                           className="btn"
                            style={{
                                fontSize: '9px',
                                padding: '0',
@@ -104,8 +105,8 @@ export const Login = () => {
                            </Grid2>
                            <Grid2 size={12} style={{marginTop: '0.7rem'}}>
                                <Button
-                                   className='btn'
-                                   style={{fontSize: '.5rem', border: '1px solid white'}}
+                                   style={{fontSize: '.5rem'}}
+                                   className="btn"
                                    variant="outlined"
                                    onClick={() => navigate('/register')}
                                >
