@@ -36,7 +36,8 @@ Button:active {
   transition: background-color 0.8s !important;
 }
 .btn:hover{
-  background-color: #FF7043 !important;
+  border: 1px solid #FF7043 !important;
+  background-color: #1E201E !important;
 }
 
 Card {
