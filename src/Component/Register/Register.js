@@ -47,7 +47,6 @@ export const Register = () => {
                                     onClick={() => navigate('/login')}
 
                                 >
-                                    {/*I already have an account.*/}
                                     {t('register.btn.haveAnAccount')}
                                 </Button>
                             </Grid2>
