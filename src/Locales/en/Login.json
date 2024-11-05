@@ -11,6 +11,10 @@
       "title": "Welcome to miraz wallet",
       "welcome": "Welcome to the Mirzad digital wallet! With us, experience managing your cryptocurrencies in a secure, fast, and easy way, and enjoy reliable transactions.",
       "dontHaveAnAccount" : "I don't have an account"
+    },
+    "btn": {
+      "en": "English",
+      "fa": "Persian"
     }
   }
 }

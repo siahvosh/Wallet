@@ -74,6 +74,15 @@ export const Login = () => {
                        </Grid2>
                    </Grid2>
                    <Grid2 sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}  size={{ xs: 12, sm: 12, md: 7 }} style={{background: '#1E201E', padding: '10px'}} >
+                       <Button
+                           size='small'
+                           variant='outlined'
+                           className='btn'
+                           style={{fontSize: '9px', padding: '0', position: 'absolute', right: '0.7rem', border: '1px solid white'}}
+                           onClick={() => changeLanguage(  i18n.language === 'fa' ?  'en' :  'fa')}
+                       >
+                           {i18n.language === 'fa' ? t('login.btn.fa') : t('login.btn.en')}
+                       </Button>
                        <div style={{ position: "relative", top: '50%', left: '50%', transform:  'translate(-50%, -50%)'}}>
                            <Grid2 size={12}>
                              <span style={{color: 'white', fontSize: '.8rem', textTransform: 'capitalize', fontWeight: '700'}}>
