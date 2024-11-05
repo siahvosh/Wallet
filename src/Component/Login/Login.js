@@ -18,13 +18,6 @@ export const Login = () => {
     const [emailVal, setEmailVal] = useState('')
     const [passVal, setPassVal] = useState('')
 
-    const validateValue = () => {
-        if(emailVal)
-            return 'false'
-        else
-            return 'false'
-    }
-
     const login = () => {
         navigate('/home')
         console.log({emailVal: emailVal})
