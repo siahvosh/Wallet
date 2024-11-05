@@ -14,7 +14,7 @@ export const Register = () => {
 
     return (
         <React.Fragment>
-            <Card style={{ width: '40%', scale: '1.8'}}>
+            <Card style={{ width: '50%', scale: '1.8', background: '#1E201E'}}>
                 <Grid2 container>
                     <Grid2 sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}  size={{ xs: 12, sm: 12, md: 7 }} style={{background: '#1E201E', padding: '10px'}} >
                         <Button
@@ -56,7 +56,7 @@ export const Register = () => {
                             </Grid2>
                         </div>
                     </Grid2>
-                    <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem'}}>
+                    <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem', background: '#ffffff'}}>
                         <Divider style={{fontSize: '.6rem'}}>
                             <span style={{fontSize: '1.2rem', fontWeight: '600'}}>
                                 {t('register.form.title')}

@@ -17,11 +17,11 @@ export const Login = () => {
 
     return (
         <React.Fragment>
-           <Card style={{ width: '40%', scale: '1.8'}}>
+           <Card style={{ width: '50%', scale: '1.8', background: '#1E201E'}}>
                <Grid2 container>
-                   <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem'}}>
-                       <Divider>
-                           <span style={{fontSize: '1.2rem', fontWeight: '600'}}>{t('login.form.title')}</span>
+                   <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem', background: '#ffffff'}}>
+                       <Divider >
+                           <span style={{fontSize: '1.2rem', fontWeight: '500'}}>{t('login.form.title')}</span>
                        </Divider>
                        <Grid2 style={{marginTop: '1rem'}} container spacing={1}>
                            <Grid2 size={12}>
@@ -75,7 +75,7 @@ export const Login = () => {
                    <Grid2
                        sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}
                        size={{ xs: 12, sm: 12, md: 7 }}
-                       style={{background: '#1E201E', padding: '10px'}}
+                       style={{background: '#1E201E', padding: '0.5rem'}}
                    >
                        <Button
                            size='small'
