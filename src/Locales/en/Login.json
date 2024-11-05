@@ -1,15 +1,16 @@
 {
   "login": {
     "form": {
-      "title": "ورود",
-      "email": "ایمیل",
-      "password": "رمز عبور",
-      "loginBtn": "ورود",
-      "or": "یا"
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "loginBtn": "Login",
+      "or": "or"
     },
     "description": {
-      "title": "میرزاد",
-      "welcome": "به برنامه خوش آمدید!"
+      "title": "Welcome to miraz wallet",
+      "welcome": "Welcome to the Mirzad digital wallet! With us, experience managing your cryptocurrencies in a secure, fast, and easy way, and enjoy reliable transactions.",
+      "dontHaveAnAccount" : "I don't have an account"
     }
   }
 }
