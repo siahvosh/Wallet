@@ -15,14 +15,14 @@ export const Login = () => {
     let navigate = useNavigate()
 
     const { t } = useTranslation('login');
-    const [open, setOpen] = useState(false)
+
     const [emailVal, setEmailVal] = useState('')
     const [passVal, setPassVal] = useState('')
     const [emailError, setEmailError] = useState('');
 
     const login = () => {
         navigate('/home')
-        setOpen(true)
+
         console.log({emailVal: emailVal})
         console.log({passVal: passVal})
     }
