@@ -35,7 +35,7 @@ export const Login = () => {
         setEmailVal(value);
 
         if (!validateEmail(value)) {
-            setEmailError('ایمیل وارد شده نامعتبر است');
+            setEmailError(t('login.alert.invalidMail'));
         } else {
             setEmailError('');
         }

@@ -17,7 +17,7 @@
       "fa": "Persian"
     },
     "alert": {
-      "invalidMail": "The entered email is invalid.",
+      "invalidMail": "The entered email is invalid",
       "incorrectMail": "The email or password is incorrect."
     }
   }
