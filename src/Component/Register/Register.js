@@ -1,19 +1,17 @@
 import React from 'react'
-import {Box, Button, Card, Checkbox, Divider, FormControlLabel, Grid2, Icon, IconButton} from "@mui/material";
+import {Button, Card, Checkbox, Divider, Grid2} from "@mui/material";
 import TextField from "@mui/material/TextField";
 import {useNavigate} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import './../../i18n';
 import i18n from './../../i18n';
 import './../../App.css'
+import changeLanguage from "../../helper"
 
 export const Register = () => {
     let navigate = useNavigate()
     const { t } = useTranslation('register');
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
     return (
         <React.Fragment>
             <Card style={{ width: '40%', scale: '1.8'}}>
@@ -23,7 +21,13 @@ export const Register = () => {
                             size='small'
                             variant='outlined'
                             className='btn'
-                            style={{fontSize: '9px', padding: '0', position: 'absolute', left: '0.7rem', border: '1px solid white'}}
+                            style={{
+                                fontSize: '9px',
+                                padding: '0',
+                                position: 'absolute',
+                                left: i18n.language === 'en' ? '0.7rem': '',
+                                right: i18n.language === 'fa' ? '0.7rem': '',
+                                border: '1px solid white'}}
                             onClick={() => changeLanguage(  i18n.language === 'fa' ?  'en' :  'fa')}
                         >
                             {i18n.language === 'fa' ? t('register.btn.fa') : t('register.btn.en')}

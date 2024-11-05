@@ -9,14 +9,12 @@ import {useEffect, useState} from "react";
 import  './../../App.css'
 import i18n from './../../i18n';
 import {useTranslation} from "react-i18next";
+import changeLanguage from "../../helper"
 
 export const Login = () => {
     const { t } = useTranslation('login');
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-
     let navigate = useNavigate()
+
     return (
         <React.Fragment>
            <Card style={{ width: '40%', scale: '1.8'}}>
@@ -73,12 +71,22 @@ export const Login = () => {
                            </Grid2>
                        </Grid2>
                    </Grid2>
-                   <Grid2 sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}  size={{ xs: 12, sm: 12, md: 7 }} style={{background: '#1E201E', padding: '10px'}} >
+                   <Grid2
+                       sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}
+                       size={{ xs: 12, sm: 12, md: 7 }}
+                       style={{background: '#1E201E', padding: '10px'}}
+                   >
                        <Button
                            size='small'
                            variant='outlined'
                            className='btn'
-                           style={{fontSize: '9px', padding: '0', position: 'absolute', right: '0.7rem', border: '1px solid white'}}
+                           style={{
+                               fontSize: '9px',
+                               padding: '0',
+                               position: 'absolute',
+                               left: i18n.language === 'fa' ? '0.7rem': '',
+                               right: i18n.language === 'en' ? '0.7rem': '',
+                               border: '1px solid white'}}
                            onClick={() => changeLanguage(  i18n.language === 'fa' ?  'en' :  'fa')}
                        >
                            {i18n.language === 'fa' ? t('login.btn.fa') : t('login.btn.en')}
