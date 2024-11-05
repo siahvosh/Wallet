@@ -1,0 +1,15 @@
+{
+  "register": {
+    "form": {
+      "title": "ورود",
+      "email": "ایمیل",
+      "password": "رمز عبور",
+      "loginBtn": "ورود",
+      "or": "یا"
+    },
+    "description": {
+      "title": "میرزاد",
+      "welcome": "به برنامه خوش آمدید!"
+    }
+  }
+}
