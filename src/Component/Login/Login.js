@@ -7,7 +7,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 import {useNavigate} from 'react-router-dom'
 import {useEffect, useState} from "react";
 import  './../../App.css'
-
+import i18n from './../../i18n';
 
 export const Login = () => {
 
@@ -18,6 +18,7 @@ export const Login = () => {
            <Card style={{ width: '40%', scale: '1.8'}}>
                     <Grid2 container spacing={2}>
                         <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem'}}>
+
                             <Divider style={{fontSize: '.6rem'}}>Login</Divider>
                             <Grid2 style={{marginTop: '1rem'}} container spacing={2}>
                                 <Grid2 size={12}>
