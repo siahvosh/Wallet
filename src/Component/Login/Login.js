@@ -63,7 +63,7 @@ export const Login = () => {
 
     return (
         <React.Fragment>
-           <Card style={{ width: '50%', scale: '1.8', background: '#1E201E'}}>
+           <Card style={{ width: '50%', scale: '1.8', background: '#1E201E', margin: 'auto'}}>
                <Grid2 container>
                    <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem', background: '#ffffff'}}>
                        <IconButton

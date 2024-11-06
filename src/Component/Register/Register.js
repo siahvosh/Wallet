@@ -27,7 +27,7 @@ export const Register = () => {
 
     return (
         <React.Fragment>
-            <Card style={{ width: '50%', scale: '1.8', background: '#1E201E'}}>
+            <Card style={{ width: '50%', scale: '1.8', background: '#1E201E', margin: 'auto'}}>
                 <Grid2 container>
                     <Grid2 sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}  size={{ xs: 12, sm: 12, md: 7 }} style={{background: '#1E201E', padding: '10px'}} >
                         <Button
@@ -144,7 +144,7 @@ export const Register = () => {
                                     style={{display: 'block',   width: '100%'}}
                                     size="small"
                                     variant="contained"
-                                    onClick={() => navigate('/home')}
+                                    onClick={() => navigate('/wizardBase')}
                                     disabled={!form.firstName || !form.lastName || !form.email || !form.password}
 
                                 >

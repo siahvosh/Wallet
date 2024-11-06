@@ -1,11 +1,11 @@
 body {
   direction: ltr;
   text-align: left;
-
 }
 body.fa {
   direction: rtl !important;
   text-align: right !important;
+
 }
 
 Button{
@@ -43,13 +43,14 @@ Card:hover {
   text-align: center;
 }
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
   color: white;
+  background: white !important;
 }
 
 .btn{
