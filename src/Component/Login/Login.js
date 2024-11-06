@@ -1,31 +1,49 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
-import {Alert, AlertTitle, Box, Button, Card, Collapse, Divider, Grid2, IconButton} from "@mui/material";
+import {Button, Card, Divider, Grid2, IconButton} from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
 import {useNavigate} from 'react-router-dom'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import  './../../App.css'
 import i18n from './../../i18n';
 import {useTranslation} from "react-i18next";
 import changeLanguage from "../../helper"
+import SimpleSnackbar from "../Mui/snakbar";
 
 export const Login = () => {
     let navigate = useNavigate()
-
     const { t } = useTranslation('login');
 
+
+    // useState=====================================
+    const [showSnackbar, setShowSnackbar] = useState(false);
     const [emailVal, setEmailVal] = useState('')
     const [passVal, setPassVal] = useState('')
     const [emailError, setEmailError] = useState('');
+    const [result, setResult] = useState(false)
 
-    const login = () => {
-        navigate('/home')
 
-        console.log({emailVal: emailVal})
-        console.log({passVal: passVal})
+
+    // useEffect=====================================
+
+
+
+    // FUNCTIONS=====================================
+
+    const handelCloseShow = (value) => {
+        setShowSnackbar(!value)
     }
+    const login = () => {
+        if(emailVal !== 'sia@gmail.com' && passVal !== '12345')
+            setResult(false)
+        else{
+            setResult(true)
+            navigate('/home')
+        }
+        setShowSnackbar(true);
+    };
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -106,6 +124,7 @@ export const Login = () => {
                            </Grid2>
                        </Grid2>
                    </Grid2>
+
                    <Grid2
                        sx={{ display: { xs: 'none', sm: 'none', md: 'block'} }}
                        size={{ xs: 12, sm: 12, md: 7 }}
@@ -150,8 +169,9 @@ export const Login = () => {
                        </div>
                    </Grid2>
                </Grid2>
-           </Card>
 
+           </Card>
+           <SimpleSnackbar show={showSnackbar} result={result} closeSnak={handelCloseShow}/>
         </React.Fragment>
     )
 }

@@ -4,8 +4,8 @@ body {
 
 }
 body.fa {
-  direction: rtl;
-  text-align: right;
+  direction: rtl !important;
+  text-align: right !important;
 }
 
 Button{
