@@ -145,6 +145,7 @@ export const Register = () => {
                                     size="small"
                                     variant="contained"
                                     onClick={() => navigate('/home')}
+                                    disabled={!form.firstName || !form.lastName || !form.email || !form.password}
 
                                 >
                                     {t('register.form.registerBtn')}
