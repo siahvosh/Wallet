@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card, Checkbox, Divider, Grid2} from "@mui/material";
+import {Button, Card, Checkbox, Divider, Grid2, IconButton} from "@mui/material";
 import TextField from "@mui/material/TextField";
 import {useNavigate} from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
@@ -7,6 +7,7 @@ import './../../i18n';
 import i18n from './../../i18n';
 import './../../App.css'
 import changeLanguage from "../../helper"
+import LanguageIcon from "@mui/icons-material/Language";
 
 export const Register = () => {
     let navigate = useNavigate()
@@ -57,6 +58,20 @@ export const Register = () => {
                         </div>
                     </Grid2>
                     <Grid2 size={{xs: 12, sm: 12, md: 5}} style={{padding: '1rem', background: '#ffffff'}}>
+                        <IconButton
+                            style={{
+                                position: 'absolute',
+                                left: i18n.language === 'fa' ? '0.9rem': '',
+                                right: i18n.language === 'en' ? '0.9rem': '',
+                                top: '0.2rem',
+                                width: '20px',
+                                height: '20px',
+                                fontSize: '0.3rem'}}
+                            sx={{ display: { xs: 'block', sm: 'block', md: 'none'} }}
+                            onClick={() => changeLanguage(  i18n.language === 'fa' ?  'en' :  'fa')}
+                        >
+                            <LanguageIcon style={{width: '18px', height: '18px', position:'absolute', top: '1', right: '1'}} fontSize='large'/>
+                        </IconButton>
                         <Divider style={{fontSize: '.6rem'}}>
                             <span style={{fontSize: '1.2rem', fontWeight: '600'}}>
                                 {t('register.form.title')}

@@ -4,16 +4,23 @@ import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 
 export default function SimpleSnackbar(props) {
-    const [open, setOpen] = useState(false);
-    const { t } = useTranslation('login');
+    // const [open, setOpen] = useState(false);
+
+
 
     useEffect(() => {
-        setOpen(props.show)
+        setState({...state, open: props.show})
+    }, [props.show])
 
-
-    },[props.show])
+    const [state, setState] = useState({
+        open: false,
+        vertical: 'center',
+        horizontal: 'center',
+    });
+    const { vertical, horizontal, open } = state;
+    const { t } = useTranslation('login');
     const handleClose = () => {
-        setOpen(false);
+        setState({...state, open: false} );
         props.closeSnak(open);
     };
 
@@ -21,7 +28,8 @@ export default function SimpleSnackbar(props) {
         <div>
             <Snackbar
                 open={open}
-                autoHideDuration={1000}
+                anchorOrigin={{ vertical, horizontal }}
+                autoHideDuration={2000}
                 onClose={handleClose}
                 message={props.result ? t('login.alert.incorrectMail') : t('login.alert.incorrectMail')}
             />
