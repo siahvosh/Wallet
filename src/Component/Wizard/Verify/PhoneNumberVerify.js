@@ -7,7 +7,6 @@ export const PhoneNumberVerify = () => {
                 <h1>PhoneNumberVerify</h1>
                 <h1>PhoneNumberVerify</h1>
                 <h1>PhoneNumberVerify</h1>
-
             </div>
         </React.Fragment>
     )

@@ -144,7 +144,7 @@ export const Register = () => {
                                     style={{display: 'block',   width: '100%'}}
                                     size="small"
                                     variant="contained"
-                                    onClick={() => navigate('/wizardBase')}
+                                    onClick={() => navigate('/verifyWizardBase')}
                                     disabled={!form.firstName || !form.lastName || !form.email || !form.password}
 
                                 >
