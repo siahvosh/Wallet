@@ -36,7 +36,7 @@ export const Login = () => {
         setShowSnackbar(!value)
     }
     const login = () => {
-        if(emailVal !== 'sia@gmail.com' && passVal !== '12345')
+        if(emailVal !== 'sia@gmail.com' || passVal !== '12345')
             setResult(false)
         else{
             setResult(true)
