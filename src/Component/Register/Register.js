@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Button, Card, Checkbox, Divider, Grid2, IconButton} from "@mui/material";
 import TextField from "@mui/material/TextField";
 import {useNavigate} from 'react-router-dom'
@@ -12,6 +12,18 @@ import LanguageIcon from "@mui/icons-material/Language";
 export const Register = () => {
     let navigate = useNavigate()
     const { t } = useTranslation('register');
+
+    const [form, setForm] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    })
+
+    const handleForm = (value, key) => {
+        setForm({...form, [key]: value})
+        console.log(form)
+    }
 
     return (
         <React.Fragment>
@@ -85,6 +97,7 @@ export const Register = () => {
                                     style={{width: '100%'}}
                                     id="outlined-basic"
                                     type={"text"}
+                                    onChange={(e) => handleForm(e.target.value, 'firstName')}
                                     label={t('register.form.firstName')}
                                     variant="outlined"
                                 />
@@ -96,6 +109,7 @@ export const Register = () => {
                                     style={{width: '100%'}}
                                     id="outlined-basic"
                                     type={"text"}
+                                    onChange={(e) => handleForm(e.target.value, 'lastName')}
                                     label={t('register.form.lastName')}
                                     variant="outlined"
                                 />
@@ -107,6 +121,7 @@ export const Register = () => {
                                     style={{width: '100%'}}
                                     id="outlined-basic"
                                     type={"email"}
+                                    onChange={(e) => handleForm(e.target.value, 'email')}
                                     label={t('register.form.email')}
                                     variant="outlined"
                                 />
@@ -118,6 +133,7 @@ export const Register = () => {
                                     style={{  width: '100%'}}
                                     id="outlined-basic"
                                     type={"password"}
+                                    onChange={(e) => handleForm(e.target.value, 'password')}
                                     label={t('register.form.password')}
                                     variant="outlined"
                                 />
