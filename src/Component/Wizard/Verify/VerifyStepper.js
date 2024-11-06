@@ -9,6 +9,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import {Card} from "@mui/material";
 
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
@@ -94,7 +95,7 @@ ColorlibStepIcon.propTypes = {
 export const VerifyStepper = (props) => {
     return (
         <React.Fragment>
-            <Stack sx={{ width: 'calc(100%)',justifyContent: 'center', marginTop: '2rem', paddingBottom: '1rem'}}>
+            <Card sx={{ width: 'calc(100%)',justifyContent: 'center', marginTop: '2rem', paddingBottom: '1rem'}}>
                 <Stepper alternativeLabel activeStep={props.step} connector={<ColorlibConnector />}>
                     {props.labels.map((label) => (
                         <Step key={label}>
@@ -102,7 +103,7 @@ export const VerifyStepper = (props) => {
                         </Step>
                     ))}
                 </Stepper>
-            </Stack>
+            </Card>
 
         </React.Fragment>
     );

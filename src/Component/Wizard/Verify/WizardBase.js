@@ -25,15 +25,15 @@ export const WizardBase = () => {
                 <CardContent>
                     <VerifyStepper labels={stepsLabel} step={stepCount}/>
                 </CardContent>
-                {stepCount}
 
-                <CardContent style={{borderTop: '1px solid black'}}>
+
+                <CardContent style={{}}>
                     {stepCount === 0 && <EmailVerify/>}
                     {stepCount === 1 && <PhoneNumberVerify/>}
                     {stepCount === 2 && <ShahkarCode/>}
                 </CardContent>
 
-                <CardActions style={{ border: '2px solid red', padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+                <CardActions style={{padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
 
                     {stepCount !== 0 && <Button onClick={() => setStepCount(stepCount - 1)} >Back </Button> }
 

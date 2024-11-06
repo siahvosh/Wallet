@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card, Grid2} from "@mui/material";
+import {OTPInput} from "../../Mui/OTP";
 
 export const EmailVerify = () => {
     return (
@@ -12,6 +13,9 @@ export const EmailVerify = () => {
                     <Grid2 size={12}>
                         <span style={{fontSize: '1.5rem', fontWeight: '500'}}>Please check your email for the verification code. Enter the code below to verify your account.</span>
                     </Grid2>
+                    <OTPInput/>
+                    <span style={{paddingTop: '2rem'}}>Send code</span>
+
                 </Grid2>
             </Card>
         </React.Fragment>
