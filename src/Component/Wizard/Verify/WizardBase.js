@@ -3,7 +3,7 @@ import {VerifyStepper} from './VerifyStepper'
 import {EmailVerify} from './EmailVerify'
 import {PhoneNumberVerify} from './PhoneNumberVerify'
 import {ShahkarCode} from './ShahkarCode'
-import {Button, Card, CardActions, CardContent} from "@mui/material";
+import {Button, Card, CardActions, CardContent, Grid2} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
 
@@ -27,15 +27,17 @@ export const WizardBase = () => {
                 </CardContent>
                 {stepCount}
 
-                <CardContent style={{borderTop: '1px solid black', borderBottom: '1px solid black'}}>
+                <CardContent style={{borderTop: '1px solid black'}}>
                     {stepCount === 0 && <EmailVerify/>}
                     {stepCount === 1 && <PhoneNumberVerify/>}
                     {stepCount === 2 && <ShahkarCode/>}
                 </CardContent>
 
-                <CardActions style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem'}}>
-                    {stepCount !== 0 && <Button onClick={() => setStepCount(stepCount - 1)}> Back</Button>}
-                    <Button style={{float: 'right !important'}} onClick={handelStepper}>next</Button>
+                <CardActions style={{ border: '2px solid red', padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+
+                    {stepCount !== 0 && <Button onClick={() => setStepCount(stepCount - 1)} >Back </Button> }
+
+                    <Button style={{ marginLeft: "auto" }} onClick={handelStepper}>Next</Button>
                 </CardActions>
 
             </Card>
