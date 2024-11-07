@@ -6,6 +6,7 @@ import {ShahkarCode} from './ShahkarCode'
 import {Button, Card, CardActions, CardContent, Grid2} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import i18n from '../../../i18n'
 
 
 export const WizardBase = () => {
@@ -46,7 +47,7 @@ export const WizardBase = () => {
 
                     {stepCount !== 0 && <Button onClick={() => setStepCount(stepCount - 1)} > {t('wizardBase.back')} </Button> }
 
-                    <Button disabled={disable} style={{ marginLeft: "auto" }} onClick={handelStepper}> {stepCount > 1 ? t('wizardBase.finish') : t('wizardBase.next')}</Button>
+                    <Button disabled={disable} style={{ marginLeft: i18n.language === 'en' ? 'auto': '', marginRigth: i18n.language === 'fa' ? 'auto': '' }} onClick={handelStepper}> {stepCount > 1 ? t('wizardBase.finish') : t('wizardBase.next')}</Button>
 
                 </CardActions>
 
