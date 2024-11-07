@@ -21,16 +21,19 @@
   },
   "verify": {
     "step1": {
+      "label": "email",
       "title": "Please check your email for the verification code. Enter the code below to verify your account.",
       "resendCode": "Resend Code"
     },
     "step2": {
+      "label": "Email",
       "title": "Please enter you phone number and  check your inbox for the verification code. Enter the code below to verify your account.",
       "resendCode": "Resend Code",
       "phoneNumber": "Phone number",
       "sendCode": "Send code"
     },
     "step3": {
+      "label": "National number",
       "title": "Please enter you phone number and check your inbox for the verification code. Enter the code below to verify your account.",
       "nationalNumber": "National number",
       "apply": "Apply"

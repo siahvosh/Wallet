@@ -15,8 +15,7 @@ export const WizardBase = () => {
 
     const [stepCount, setStepCount] = useState(0)
     const [disable, setDisable] = useState(true)
-    const stepsLabel = ['Verify email', 'Verify phone number', 'Shahkar code'];
-
+    const stepsLabel = ['verify.step1.label', 'verify.step2.label', 'verify.step3.label'];
 
     const handelStepper = () => {
         setDisable(true)
@@ -35,22 +34,16 @@ export const WizardBase = () => {
                 <CardContent>
                     <VerifyStepper labels={stepsLabel} step={stepCount}/>
                 </CardContent>
-
-
                 <CardContent>
                     {stepCount === 0 && <EmailVerify disableStep1={handelDisableBtn}/>}
                     {stepCount === 1 && <PhoneNumberVerify disableStep2={handelDisableBtn}/>}
                     {stepCount === 2 && <ShahkarCode disableStep3={handelDisableBtn}/>}
                 </CardContent>
-
+                {i18n.language}
                 <CardActions style={{padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
-
-                    {stepCount !== 0 && <Button onClick={() => setStepCount(stepCount - 1)} > {t('wizardBase.back')} </Button> }
-
-                    <Button disabled={disable} style={{ marginLeft: i18n.language === 'en' ? 'auto': '', marginRigth: i18n.language === 'fa' ? 'auto': '' }} onClick={handelStepper}> {stepCount > 1 ? t('wizardBase.finish') : t('wizardBase.next')}</Button>
-
+                    {stepCount !== 0 ? <Button onClick={() => setStepCount(stepCount - 1)} > {t('wizardBase.back')} </Button> : <span></span>}
+                    <Button disabled={disable}  onClick={handelStepper}> {stepCount > 1 ? t('wizardBase.finish') : t('wizardBase.next')}</Button>
                 </CardActions>
-
             </Card>
         </React.Fragment>
     )

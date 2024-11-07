@@ -10,6 +10,7 @@ import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import {Card} from "@mui/material";
+import {useTranslation} from "react-i18next";
 
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
@@ -92,14 +93,16 @@ ColorlibStepIcon.propTypes = {
     icon: PropTypes.node,
 };
 
+
 export const VerifyStepper = (props) => {
+    const {t} = useTranslation('register')
     return (
         <React.Fragment>
             <Card sx={{ width: 'calc(100%)',justifyContent: 'center', marginTop: '2rem', paddingBottom: '1rem'}}>
                 <Stepper alternativeLabel activeStep={props.step} connector={<ColorlibConnector />}>
                     {props.labels.map((label) => (
                         <Step key={label}>
-                            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
+                            <StepLabel StepIconComponent={ColorlibStepIcon}>{t(label)}</StepLabel>
                         </Step>
                     ))}
                 </Stepper>
