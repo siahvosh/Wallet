@@ -9,11 +9,10 @@ export const PhoneNumberVerify = (props) => {
     const handelOtpNumber = (value) => {
         const isArrayComplete = value.every(element => element !== "");
         props.disableStep2(isArrayComplete)
-        console.log(isArrayComplete)
     }
     return (
         <React.Fragment>
-            <React.Fragment>
+
                 <Card style={{width: 'calc(100%)', padding: '1rem 0 2rem 0'}}>
                     <Grid2>
                         <Grid2 size={12}>
@@ -47,7 +46,7 @@ export const PhoneNumberVerify = (props) => {
 
                     </Grid2>
                 </Card>
-            </React.Fragment>
+
         </React.Fragment>
     )
 }

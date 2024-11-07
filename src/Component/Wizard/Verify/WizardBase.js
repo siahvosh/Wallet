@@ -37,7 +37,7 @@ export const WizardBase = () => {
                 <CardContent>
                     {stepCount === 0 && <EmailVerify disableStep1={handelDisableBtn}/>}
                     {stepCount === 1 && <PhoneNumberVerify disableStep2={handelDisableBtn}/>}
-                    {stepCount === 2 && <ShahkarCode/>}
+                    {stepCount === 2 && <ShahkarCode disableStep3={handelDisableBtn}/>}
                 </CardContent>
 
                 <CardActions style={{padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
