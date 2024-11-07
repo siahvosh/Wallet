@@ -2,7 +2,7 @@ import {Grid2, TextField} from "@mui/material";
 import {useState} from "react";
 import Stack from "@mui/material/Stack";
 
-export const OTPInput = () => {
+export const OTPInput = (props) => {
     const [otp, setOtp] = useState(["", "", "", "", "", ""]);
 
     const handleChange = (e, index) => {
@@ -13,8 +13,9 @@ export const OTPInput = () => {
         if (e.target.value && index < otp.length - 1) {
             document.getElementById(`otp-${index + 1}`).focus();
         }
-    };
 
+        props.otpNumber(newOtp)
+    };
     const handleKeyDown = (e, index) => {
         if (e.key === "Backspace" && !otp[index] && index > 0) {
             document.getElementById(`otp-${index - 1}`).focus();
@@ -25,7 +26,7 @@ export const OTPInput = () => {
         <Stack style={{paddingTop: '1.5rem'}}>
             <Grid2 container spacing={1} justifyContent="center">
                 {otp.map((value, index) => (
-                    <Grid2 item key={index}>
+                    <Grid2 key={index}>
                         <TextField
                             id={`otp-${index}`}
                             value={value}
