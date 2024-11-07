@@ -5,10 +5,12 @@ import {PhoneNumberVerify} from './PhoneNumberVerify'
 import {ShahkarCode} from './ShahkarCode'
 import {Button, Card, CardActions, CardContent, Grid2} from "@mui/material";
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 export const WizardBase = () => {
     let navigate = useNavigate()
+    const { t } = useTranslation('register')
 
     const [stepCount, setStepCount] = useState(0)
     const [disable, setDisable] = useState(true)
@@ -42,9 +44,9 @@ export const WizardBase = () => {
 
                 <CardActions style={{padding: '1rem', display: 'flex', justifyContent: 'space-between' }}>
 
-                    {stepCount !== 0 && <Button onClick={() => setStepCount(stepCount - 1)} >Back </Button> }
+                    {stepCount !== 0 && <Button onClick={() => setStepCount(stepCount - 1)} > {t('wizardBase.back')} </Button> }
 
-                    <Button disabled={disable} style={{ marginLeft: "auto" }} onClick={handelStepper}> {stepCount > 1 ? 'Finish' : 'next'}</Button>
+                    <Button disabled={disable} style={{ marginLeft: "auto" }} onClick={handelStepper}> {stepCount > 1 ? t('wizardBase.finish') : t('wizardBase.next')}</Button>
 
                 </CardActions>
 

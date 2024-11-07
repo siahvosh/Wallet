@@ -22,7 +22,6 @@ export const Register = () => {
 
     const handleForm = (value, key) => {
         setForm({...form, [key]: value})
-        console.log(form)
     }
 
     return (

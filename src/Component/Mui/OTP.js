@@ -23,7 +23,7 @@ export const OTPInput = (props) => {
     };
 
     return (
-        <Stack style={{paddingTop: '1.5rem'}}>
+        <Stack style={{paddingTop: '1.5rem', direction: 'ltr'}}>
             <Grid2 container spacing={1} justifyContent="center">
                 {otp.map((value, index) => (
                     <Grid2 key={index}>

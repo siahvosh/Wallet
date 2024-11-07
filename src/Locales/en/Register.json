@@ -18,5 +18,27 @@
       "fa": "Persian",
       "haveAnAccount": "I already have an account."
     }
+  },
+  "verify": {
+    "step1": {
+      "title": "Please check your email for the verification code. Enter the code below to verify your account.",
+      "resendCode": "Resend Code"
+    },
+    "step2": {
+      "title": "Please enter you phone number and  check your inbox for the verification code. Enter the code below to verify your account.",
+      "resendCode": "Resend Code",
+      "phoneNumber": "Phone number",
+      "sendCode": "Send code"
+    },
+    "step3": {
+      "title": "Please enter you phone number and check your inbox for the verification code. Enter the code below to verify your account.",
+      "nationalNumber": "National number",
+      "apply": "Apply"
+    }
+  },
+  "wizardBase":{
+    "next": "Next",
+    "finish": "Finish",
+    "back": "Back"
   }
 }

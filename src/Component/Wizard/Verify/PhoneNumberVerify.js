@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useTransition} from 'react'
 import {Button, Card, Grid2, IconButton, TextField} from "@mui/material";
 import {OTPInput} from "../../Mui/OTP";
 import EditIcon from '@mui/icons-material/Edit';
-import GoogleIcon from "@mui/icons-material/Google";
+import {useTranslation} from "react-i18next";
 
 export const PhoneNumberVerify = (props) => {
+    const {t} = useTranslation('register')
     const [sendEmail, setSendEmail] = useState(false)
     const handelOtpNumber = (value) => {
         const isArrayComplete = value.every(element => element !== "");
@@ -16,7 +17,7 @@ export const PhoneNumberVerify = (props) => {
                 <Card style={{width: 'calc(100%)', padding: '1rem 0 2rem 0'}}>
                     <Grid2>
                         <Grid2 size={12}>
-                            <span style={{fontSize: '1.5rem', fontWeight: '500'}}>Please enter you phone number and  check your inbox for the verification code. Enter the code below to verify your account.</span>
+                            <span style={{fontSize: '1.5rem', fontWeight: '500'}}>{t('verify.step2.title')}</span>
                         </Grid2>
                         <Grid2 size={12} container spacing={1} style={{justifyContent: 'center', marginTop: '1rem'}}>
                             <Grid2>
@@ -25,10 +26,10 @@ export const PhoneNumberVerify = (props) => {
                             </IconButton>
                             </Grid2>
                             <Grid2>
-                                <TextField disabled={sendEmail} label='phone number' size="small" style={{}}/>
+                                <TextField disabled={sendEmail} label={t('verify.step2.phoneNumber')} size="small" style={{}}/>
                             </Grid2>
                             <Grid2>
-                                <Button disabled={sendEmail} onClick={() => setSendEmail(true)} >Send sms</Button>
+                                <Button disabled={sendEmail} onClick={() => setSendEmail(true)}>{t('verify.step2.sendCode')}</Button>
                             </Grid2>
                         </Grid2>
 
@@ -39,7 +40,7 @@ export const PhoneNumberVerify = (props) => {
                                 <OTPInput otpNumber={handelOtpNumber}/>
                               </Grid2>
                               <Grid2>
-                                <span style={{paddingTop: '5rem'}}>Resend code</span>
+                                <span style={{paddingTop: '5rem'}}>{t('verify.step2.resendCode')}</span>
                               </Grid2>
                             </Grid2>
                         }
